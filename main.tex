@@ -974,6 +974,69 @@ For example,\newline
 
 \chapter{Machine Learning Basics}
 
+\section{Learning Algorithms}
+A machine learning algorithm is an algorithm that is able to learn from data. But what do we mean by learning?
+
+\begin{quotation}
+\noindent Mitchell (1997): \textit{"A computer is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$."}
+\end{quotation}
+
+\subsection{The Task, $T$}
+\noindent If we want a robot to be able to walk, then walking is the task. We could program the robot to learn to walk, or we could attempt to directly write a program that specifies how to walk manually.\newline
+
+\noindent Machine learning tasks are usually described in terms of how the machine learning system should process an \textit{\textbf{example}}. An \textbf{\textit{example}} is a collection of \textbf{\textit{features}} that have been quantitatively measured from some object or event that we want the machine learning system to process. 
+
+\noindent We typically represent an \textbf{\textit{example}} as a vector $x \in \mathbb{R}^n$ where each entry $x_i$ of the vector is another \textbf{\textit{feature}}. For example, the features of an image are usually the values of the pixels in the image.\newline
+
+\noindent Some of the most common machine learning tasks include the following:\newline
+\begin{itemize}
+	\item Refer to Deep Learning Book's section 5.1.1, page 100-102
+\end{itemize}
+
+\subsection{The Performance Measure, $P$}
+\noindent For tasks such as classification, classification with missing inputs, and transcription, we often measure the \textbf{\textit{accuracy}} of the model. Accuracy is just the proportion of examples for which the model produces the correct output. We can also obtain equivalent information by measuring the \textbf{\textit{error rate}}, the proportion of examples for which the model produce an incorrect output. We often refer to the error rate as the expected 0-1 loss. The 0-1 loss on a particular example is 0 if it is correctly classified and 1 if it is not. \newline
+
+\noindent For tasks such as density estimation, it does not make sense to measure accuracy, error rate, or any other kind of 0-1 loss. Instead, we must use a different performance metric that gives the model a continuous-valued score for each example. The most common approach is to report the average log-probability the model assigns to some examples.\newline
+
+\noindent Usually we are interested in how well the machine learning algorithm performs on data that it has not seen before, since this determines how well it will work when deployed in the real world. We therefore evaluate these performance measures using a \textbf{\textit{test set}} of data that is separate from the data used for training the machine learning system.\newline
+
+\noindent In some cases, this is because it is difficult to decide what should be measured. For example, when performing a transcription task, should we measure the accuracy of the system at transcribing entire sequences, or should we use a more fine-grained performance measure that gives partial credit for getting some elements of the sequence correct? When performing a regression task, should we penalize the system more if it frequently medium-sized mistakes or if it rarely makes very large mistakes? These kinds of design choices depend on the application.\newline
+
+\noindent In other cases, we know what quantity we would ideally like to measure, but measuring it is impractical. For example, this arises frequently in the context of density estimation. Many of the best probabilistic value assigned to a specific point in space in many such models is intractable. In these cases, one must design an alternative criterion that still corresponds to the design objectives, or design a good approximation to the desired criterion.\newline
+
+\subsection{The Experience, $E$}
+\noindent Machine learning algorithms can be broadly categorized as \textbf{\textit{unsupervised}} or \textbf{\textit{supervised}} by what kind of experience they are allowed to have during the learning process.\newline
+
+\noindent Most of the learning algorithms in this book can be understood as being allowed to experience an entire \textbf{\textit{dataset}}. A dataset is a collection of many examples, as defined in Sec. 15.1.1. Sometimes we will also call examples \textbf{\textit{data points}}.\newline
+
+\noindent One of the oldest datasets studied by statisticians and machine learning researchers is the Iris dataset (Fisher, 1936). It is a collection of measurements of different parts of 150 iris plants. Each individual plant corresponds to one example. The features within each example are the measurements of each of the parts of the plant: the sepal length, sepal width, petal length and petal width. The dataset also records which species each plant belonged to. Three different species are represented in the dataset.\newline
+
+\noindent \textbf{\textit{Unsupervised learning algorithms}} experience a dataset containing many features, then learn useful properties of the structure of this dataset. In the context of deep learning, we usually want to learn the entire probability distribution that generated a dataset, whether explicitly as in density estimation or implicitly for tasks like synthesis or denoising. Some other unsupervised learning algorithms perform other roles, like clustering, which consists of dividing the dataset into clusters of similar examples.\newline
+
+\noindent \textbf{\textit{Supervised learning algorithms}} experience a dataset containing features, but each example is also associated with a label or target. For example, the Iris dataset is annotated with the species of each iris plant. A supervised learning algorithm can study the Iris dataset and learn to classify iris plants into three different species based on their measurements.\newline
+
+\noindent Roughly speaking, unsupervised learning involves observing several examples of a random vector $x$, and attempting to implicitly or explicitly learn the probability distribution $p(x)$, or some interesting properties of that distribution, while supervised learning involves observing several examples of a random vector $x$ and an associated value or vector $y$, and learning to predict $y$ from $x$, usually by estimating $p(y|x)$. The term \textbf{\textit{supervised learning}} originates from the view of the target $y$ being provided by an instructor or teacher who shows the machine learning system what to do. In \textbf{\textit{unsupervised learning}}, there is no instructor or teacher, and the algorithm must learn to make sense of the daata without this guide.\newline
+
+\textbf{\textit{Unsupervised learning}} and \textbf{\textit{supervised learning}} are not formally defined terms. The lines between them are often blurred. Many machine learning technologies can be used to perform both tasks. For example, the chain rule of probability states that for a vector $x \in \mathbb{R}^n$, the joint distribution can be decomposed as\newline\newline
+\centerline{$p(x) = \prod_{i=1}^{n} p(x_i | x_1, ..., x_{i-1})$}\newline\newline
+
+This decomposition means that we can solve the ostensibly unsupervised problem of modeling $p(x)$ by splitting it into $n$ supervised learning problems. Alternatively, we can solve the supervised learning problem of learning $p(y|x)$ by using traditional unsupervised learning technologies to learn the joint distribution $p(x,y)$ and inferring\newline\newline
+\centerline{$p(y|x)=\frac{p(x,y)}{\sum_{y'}p(x,y')}$}\newline
+
+\noindent Though unsupervised learning and supervised learning are not completely formal or distinct concepts, they do help to roughly categorize some of the things we do with machine learning algorithms. Traditionally, people refer to regression, classification and structured output problems as supervised learning. Density estimation in support of other tasks is usually considered unsupervised learning.\newline
+
+\noindent Other variants of the learning paradigm are possible. For example, in semisupervised learning, some examples include a supervision target but others do not. In multi-instance learning, an entire collection of examples is labeled as containing or not containing an example of a class, but the individual members of the collection are not labeled. For a recent example of multi-instance learning with deep models, see Kotzias et al. (2015).\newline
+
+\noindent Some machine learning algorithms do not just experience a fixed dataset. For example, reinforcement learning algorithms interact with an environment, so there is a feedback loop between the learning system and its experiences. Such algorithms are beyond the scope of this book. Please see Sutton and Barto (1998) or Bertsekas and Tsitsiklis (1996) for information about reinforcement learning, and Mnih et al. (2013) for the deep learning approach to reinforcement learning.\newline
+
+\noindent Most machine learning algorithms simply experience a dataset. A dataset can be described in many ways. In all cases, a dataset is a collection of examples, which are in turn collections of features.\newline
+
+\noindent One common way of describing a dataset is with a \textbf{\textit{design matrix}}. A design matrix is a matrix containing a different example in each row. Each column of the matrix corresponds to a different feature. For instance, the Iris dataset contains 150 examples with four features for each example. This means we can represent the dataset with a design matrix $\mathbb{X} \in \mathbb{R}^{150x4}$, where $\mathbb{X}_{i,1}$ is the sepal length of plant $i$, $\mathbb{X}_{i,2}$ is the sepal width of plant $i$, etc. We will describe most of the learning algorithms in this book in terms of how they operate on design matrix datasets.\newline
+
+\noindent Of course, to describe a dataset as a design matrix, it must be possible to describe 
+
+
+
 \section{Example: Linear Regression}
 Linear regression solves a regression problem. In other words, the goal is to build a system that can take a vector $x \in \mathbb{R}^n$ as input and predict the value of a scalar $y \in \mathbb{R}$ as its output. In the case of linear regression, the output is a linear function of the input. Let $\hat{y}$ be the value that our model predicts $y$ should take on. We define the output to be\newline
     \centerline{$\hat{y}= w^T x $}\newline
@@ -995,6 +1058,28 @@ The goal of a feedforward network is to approximate some function $f^*$. For exa
 \noindent During neural network training, we drive $f(x)$ to match $f^*(x)$. The training data provides us with noisy, approximate examples of $f^*(x)$ evaluated at different training points. Each example $x$ is accompanied by a label $y \approx f^*(x)$. The training examples specify directly what the output layer must do at each point $x$; it must produce a value that is close to $y$. The behavior of other layers is not directly specified by the training data. The learning algorithm must decide how to use those layers to produce the desired output, but the training data does not say what each individual layer should do. Instead, the learning algorithm must decide how to use these layers to best implement an approximation of $f^*$. Because the training data does not show the desired output for each of these layers, these layers are called \textit{hidden layers}.\newline
 
 \noindent Each hidden layer of the network is typically vector-valued. The dimensionality of these hidden layers determines the \textit{width} of the model. Each element of the vector may in interpreted as playing a role analogous to a neuron. Rather than thinking of the layer as consisting of many \textit{units} that act in parallel, each representing a vector-to-scalar function. Each unit resembles a neuron in the sense that it receives input from other units and computes its own activation value. The idea of using many layers of vector-valued representation is drawn from neuroscience. The choice of the functions $f^{(i)}(x)$ used to compute these representations is also loosely guided by neuroscientific observations about the functions that biological neurons compute. However, it is best to think of feedforward networks as function approximation machines that are designed to achieve statistical generalization, occasionally drawing some insights from what we know about the brain, rather than as models of brain function.\newline
+
+\noindent One way to understand feedforward networks is to begin with linear models and consider how to overcome their limitations. Linear models, such as logistic regression and linear regression, are appealing because they may be fit efficiently and reliably, either in closed form or with convex optimization. Linear models also have the obvious defect that the model capacity is limited to linear functions, so the model cannot understand the interaction between any two input variables.\newline
+
+\noindent To extend linear models to represent nonlinear functions of $x$, we can apply the linear model not to $x$ itself but to a transformed input $\phi(x)$, where $\phi$ is a nonlinear transformation. Equivalently, we can apply the kernel trick described in (Deep Learning Book's Section 5.7.2), to obtain a nonlinear learning algorithm based on implicitly applying the $\phi$ mapping. We can think of $\phi$ as providing a set of features describing $x$, or as providing a new representation for $x$.
+
+\noindent The question is then how to choose the mapping $\phi$:
+\begin{enumerate}
+	\item Use a very generic $\phi$, such as the infinite-dimensional $\phi$ that is implicitly used by kernel machines based on the RBF kernel.\newline
+    	\begin{itemize}
+    		\item If $\phi(x)$ is of high enough dimension, we can always have enough capacity to fit the training set, but generalization to the test set often remains poor.
+            \item Very generic feature mappings are usually based only on the principle of local smoothness and do not encode enough prior information to solve advanced problems.
+    	\end{itemize}
+    \item Manually engineer $\phi$\newline
+    	\begin{itemize}
+    		\item Until the advent of deep learning, this was the dominant approach.
+            \item This approach requires decades of human effort for each separate task, with peactitioners specializing in different domains such as speech recognition or computer vision, and with little transfer between domains.
+    	\end{itemize}
+    \item Learn $\phi$.\newline
+    	\begin{itemize}
+    		\item In this approach, we have a model $y=f(x; \theta, w) = \phi(x; \theta)^Tw$
+    	\end{itemize}
+\end{enumerate}
 
 \chapter{Convolutional Networks}
 Convolutional networks are simply neural networks that use convolution in place of general matrix multiplication in at least one of their layers.
