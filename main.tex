@@ -1003,6 +1003,15 @@ when $\alpha$ and $\beta$ are not independent on $x$.\newline
 \noindent The \textbf{\textit{variance}} gives a measure of how much the values of a function of a random variable $X$ vary as we sample different values of $x$ from its probability distribution:\newline\newline
 \centerline{$\text{Var}(f(x)) = \mathbb{E}[(f(x) - \mathbb{E}[f(x)])^2]$}
 
+\noindent As you can see, what $\text{Var}(f(x))$ is doing is it compares every $(f(x)$ with $\mathbb{E}[f(x)])$, but since that value can be positive or negative, so if calculate the average, we may get near to zero variance even though the values of the function varies a lot, so we square it.\newline
+
+\noindent When the variance is low, the values of $f(x)$ cluster near their expected value. The square root of the variance is known as \textbf{\textit{standard deviation}}.\newline
+
+\noindent The covariance gives some sense of how much two values are linearly related to each other, as well as the scale of these variables:\newline\newline
+\centerline{$\text{Cov}[f(x),g(y)]=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]$}\newline
+
+High absolute 
+
 
 \chapter{Machine Learning Basics}
 
