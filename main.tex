@@ -29,21 +29,21 @@ www.probabilitycourse.com
 \subsection{Binomial Distribution}
 
 \subsubsection{Binomial random variable as a sum of Bernoulli random variables}
-\noindent Note that a $Binomial(n,p)$ random variable can be obtained by $n$ independent coin tosses. If we think of each coin toss as a $Bernoulli(p)$ random variable, the $Binomial(n,p)$ random variable is a sum of $n$ independent $Bernoulli(p)$ random variables. This is stated more precisely in the following \textbf{lemma}:\newline
+\noindent Note that a $Binomial(n,p)$ random variable can be obtained by $n$ independent coin tosses. If we think of each coin toss as a $Bernoulli(p)$ random variable, the $Binomial(n,p)$ random variable is a sum of $n$ independent $Bernoulli(p)$ random variables. This is stated more precisely in the following \textbf{lemma}:\medskip
 
-\noindent If $X_1,X_2,...,X_n$ are independent $Bernoulli(p)$ random variables, then the random variable $X$ is defined by $X=X_1+X_2+...+X_n$ has a $Binomial(n,p)$ distribution.\newline
+\noindent If $X_1,X_2,...,X_n$ are independent $Bernoulli(p)$ random variables, then the random variable $X$ is defined by $X=X_1+X_2+...+X_n$ has a $Binomial(n,p)$ distribution.
 
-\noindent That is, to generate a random variable $X ~ Binomial(n,p)$, we can toss a coin $n$ times and count the number of heads. Counting the number of heads is exactly the same as finding $X_1+X_2+...+X_n$, where each $X_i$ is equal to one if the corresponding coin toss results in heads and zero otherwise.\newline
+\noindent That is, to generate a random variable $X ~ Binomial(n,p)$, we can toss a coin $n$ times and count the number of heads. Counting the number of heads is exactly the same as finding $X_1+X_2+...+X_n$, where each $X_i$ is equal to one if the corresponding coin toss results in heads and zero otherwise.
 
-\noindent \textbf{Example:} Let $X~Binomial(n,p)$ and $Y~Binomial(m,p)$ be two independent random variables. Define a new random variable as $Z=X+Y$. Find the PMF of $Z$.\newline
+\noindent \textbf{Example:} Let $X~Binomial(n,p)$ and $Y~Binomial(m,p)$ be two independent random variables. Define a new random variable as $Z=X+Y$. Find the PMF of $Z$.\medskip
 
 $\begin{aligned}
 	Z &= X + Y \\
       &= X_1 + X_2 + ... + X_n + Y_1 + Y_2 + ... + Y_m, 
       \text{where the } X_i's \text{ and } Y_j's \text{are independent } Bernoulli(p) \text{ random variables} \\
-\end{aligned}$\newline
+\end{aligned}$
 
-\noindent So $Z$ is a binomial random variable with parameters $m + n$ and $p$, i.e., $Binomial(m+n,p)$. Therefore, the PMF of $z$ is\newline
+\noindent So $Z$ is a binomial random variable with parameters $m + n$ and $p$, i.e., $Binomial(m+n,p)$. Therefore, the PMF of $z$ is\newline\newline
 \centerline{$P_z(k) = 
 \left\{\begin{matrix}
 \begin{pmatrix}
@@ -101,15 +101,16 @@ So, we have proved $Z~Binomial(m+n,p)$ by directly finding PMF of $Z$.
     \item Note that by our definition the range of $X$ is given by $R_X=\{m,m+1,m+2,...\}$
 \end{itemize}
 
-\noindent Let us derive the PMF of a $Pascal(m,p)$ random variable $X$. Suppose that I toss the coin until I observe $m$ heads, and $X$ is defined as the total number of coin tosses in the experiment. To find the probability of the event $A=\{X=k\}$, we argue as follows. By definition, event $A$ can be written as $A=B \cap C$, where\newline
+\noindent Let us derive the PMF of a $Pascal(m,p)$ random variable $X$. Suppose that I toss the coin until I observe $m$ heads, and $X$ is defined as the total number of coin tosses in the experiment. To find the probability of the event $A=\{X=k\}$, we argue as follows. By definition, event $A$ can be written as $A=B \cap C$, where
 \begin{itemize}
 	\item $B$ is the event that we observe $m-1$ heads (successes) in the first $k-1$ trials, and
     \item $C$ is the event that we observe a heads in the $k$th trial
 \end{itemize}
 
-\noindent Note that $B$ and $C$ are independent events because they are related to different independent trials (coin tosses).\newline
-\noindent Thus we can write\newline
-\centerline{$P(A) = P(B \cap C) = P(B)P(C)$}\newline\newline
+\noindent Note that $B$ and $C$ are independent events because they are related to different independent trials (coin tosses).\medskip
+
+\noindent Thus we can write\newline\medskip
+\centerline{$P(A) = P(B \cap C) = P(B)P(C)$}
 
 
 
@@ -127,11 +128,11 @@ $R$
 \subsubsection{Definition:}
 \begin{itemize}
     \item A \textbf{\textit{complex number}} is an order pair $(a,b)$, where $a, b \in \mathbb{R}$, but we write this as $a+bi$.
-    \item The set of all complex number is denoted by $\mathbb{C}$:\newline
-   \centerline{$\mathbb{C}=\{a+bi:a,b \in \mathbb{R}\}$}
+    \item The set of all complex number is denoted by $\mathbb{C}$:\newline\medskip
+        \centerline{$\mathbb{C}=\{a+bi:a,b \in \mathbb{R}\}$}
    \item \textbf{\textit{Addition and multiplication}} on $\mathbb{C}$ are defined by:\newline
-   \centerline{$(a+bi)+(c+di)=(a+c)+(b+d)i$},\newline
-   \centerline{$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$};\newline
+   \centerline{$(a+bi)+(c+di)=(a+c)+(b+d)i$},\newline\medskip
+   \centerline{$(a+bi)(c+di)=(ac-bd)+(ad+bc)i$};\newline\medskip
    here $a,b,c,d \in \mathbb{R}$
 \end{itemize}
 
@@ -1007,10 +1008,26 @@ when $\alpha$ and $\beta$ are not independent on $x$.\newline
 
 \noindent When the variance is low, the values of $f(x)$ cluster near their expected value. The square root of the variance is known as \textbf{\textit{standard deviation}}.\newline
 
-\noindent The covariance gives some sense of how much two values are linearly related to each other, as well as the scale of these variables:\newline\newline
+\noindent The \textbf{\textit{covariance}} gives some sense of how much two values are linearly related to each other, as well as the scale of these variables:\newline\newline
 \centerline{$\text{Cov}[f(x),g(y)]=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]$}\newline
 
-High absolute 
+\begin{itemize}
+    \item High absolute values of the covariance mean that the values change very much and are both far from their respective means at the same time.
+    \item If the sign of the covariance is positive, then both variables tend to take on relatively high values simultaneously.
+    \item If the sign of the covariance is negative, then one variable tends to take on a relatively high value at the times that the other takes on a relatively low value and vice versa.
+\end{itemize}
+Other measures such as \textbf{\textit{correlation}} normalize the contribution of each variable in order to measure only how much the variables are related, rather than also being affected by the scale of the separate variables.\newline
+
+\noindent The notions of covariance and dependence are related, but are in fact distinct concepts. They are related because two variables that are independent have zero covariance, and two variables that have non-zero covariance are dependent.\newline
+
+\noindent However, independence is a distinct property from covariance. For two variables to have zero covariance, there must be no linear dependence between them. 
+
+Independence is a stronger requirement than zero covariance, because independence also excludes nonlinear relationships. It is possible for two variables to be dependent but have zero covariance.
+
+For example, suppose we first sample a real number $x$ from a uniform distribution over the interval $[-1, 1]$. We next sample a rando variable $s$. With probability $\frac{1}{2}$, we choose the value of $s$ to be 1. Otherewise, we choose the value of $s$ to be -1. We can then generate a random variable $y$ by assigning $y=sx$. Clearly, $x$ and $y$ are not independent, because $x$ completely determines the magnitude of $y$. However, $\text{Cov}(x,y)=0$.
+
+
+
 
 
 \chapter{Machine Learning Basics}
@@ -1176,7 +1193,7 @@ These two properties make these operations very simple; it's simpler if we do th
 \subsubsection{Example:}
 One of the simplest operations that we can perform with correlation is local averaging, which we replace every pixel in a 1D image by the average of that pixel and its two neighbors. Suppose we have an image $I$ equal to:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
@@ -1239,12 +1256,13 @@ where the circle denotes correlation. With this notation, we can define a simple
 \end{matrix}\right.$}
 
 \subsubsection{Constructing an Filter from a Continuous Function}
-It is pretty intuitive what a reasonable averaging filter should look like. Now we want to start to consider more general strategies for constructing filters. It commonly occurs that we have in mind a continuous function that would make a good filter, and we want to come up with a discrete filter that approximates this continuous function. Some reasons for thinking of filters first as continuous functions will be given when we talk about the Fourier transform. But in the mean time we'll give an example of an important continuous function used for image smoothing, the Gaussian.\newline
+It is pretty intuitive what a reasonable averaging filter should look like. Now we want to start to consider more general strategies for constructing filters. It commonly occurs that we have in mind a continuous function that would make a good filter, and we want to come up with a discrete filter that approximates this continuous function. Some reasons for thinking of filters first as continuous functions will be given when we talk about the Fourier transform. But in the mean time we'll give an example of an important continuous function used for image smoothing, the Gaussian.
 
 A one-dimensional Gaussian is:\newline
     \centerline{$G(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp\left ( \frac{-(x - \mu)^2}{2\sigma^2} \right )$}\newline\newline
-This is also known as a Normal distribution. Here $\mu$ is the mean value, and $\sigma$ is the variance.\newline
-The mean, $\mu$, gives the location of the peak of the function. The parameter $\sigma$ controls how wide the peak is. As $\sigma$ gets smaller the peak becomes narrower.\newline
+This is also known as a Normal distribution. Here $\mu$ is the mean value, and $\sigma$ is the variance.
+
+The mean, $\mu$, gives the location of the peak of the function. The parameter $\sigma$ controls how wide the peak is. As $\sigma$ gets smaller the peak becomes narrower.
 
 The Gaussian has a lot of very useful properties, some of which we'll mention later. 
 \begin{itemize}
@@ -1253,24 +1271,26 @@ The Gaussian has a lot of very useful properties, some of which we'll mention la
 \end{itemize}
 
 When we use a Gaussian for smoothing, we will set $\mu=0$, because we want each pixel to be the one that has the biggest effect on its new, smoothed value. So our Gaussian has the form:\newline\newline
-    \centerline{$G_0(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp\left ( \frac{-x^2}{2\sigma^2} \right )$}\newline\newline
+    \centerline{$G_0(x) = \frac{1}{\sigma \sqrt{2 \pi}} exp\left ( \frac{-x^2}{2\sigma^2} \right )$}
 
-$\sigma$ will serve as a parameter that allows us to control how much we smooth the image (that is, how big a neighborhood we use for averaging). The bigger $\sigma$ is, the more we smooth the image.\newline\newline
+$\sigma$ will serve as a parameter that allows us to control how much we smooth the image (that is, how big a neighborhood we use for averaging). The bigger $\sigma$ is, the more we smooth the image.
 
-We now want to build a discrete filter that looks like a Gaussian. We can do this by just evaluating the Gaussian at discrete locations. That is, although $G$ is defined for any continuous value of $x$, we will just use its values at discrete locations (..., -3, -2, -2, 0, 1, 2, 3, ...). One way to think about this is that we are approximating our original, continuous function with a piecewise constant function, where the pieces are each one pixel wide.\newline\newline
+We now want to build a discrete filter that looks like a Gaussian. We can do this by just evaluating the Gaussian at discrete locations. That is, although $G$ is defined for any continuous value of $x$, we will just use its values at discrete locations (..., -3, -2, -2, 0, 1, 2, 3, ...). One way to think about this is that we are approximating our original, continuous function with a piecewise constant function, where the pieces are each one pixel wide.
 
 However, we cannot evaluate $G$ at every integer location, because this would give s a filter that is infinitely long, which is impractical. Fortunately, as $x$ gets away from 0, the value of $G(x)$ will approach 0 pretty quickly, so it will be safe to ignore some values of $G(x)$, but a reasonable rule of thumb is to make sure we capture $99\%$ of the function. What we mean by this is that the sum of values in our filter will contain at least $0\%$ of what we would get in an infinitely long filter, that is, we choose $N$ so that:\newline\newline
-    \centerline{$\frac{\sum_{-N}^{N}G(x)}{\sum_{-\infty}^{\infty}G(x)} > .99$}\newline\newline
+    \centerline{$\frac{\sum_{-N}^{N}G(x)}{\sum_{-\infty}^{\infty}G(x)} > .99$}
+    
 There is one final point. An averaging filter should have all its elements add up to 1. This is what averaging means: if the filter elements don't add up to one, then we are not only smoothing the iamge, we are making it dimmer or brighter. The continuous Gaussian integrates to one (after all, it's a probability density function, and probabilities must add up to one), but when we sample it and truncate it, there is no guarantee that the values we get will still add up to one. So we must normalize our filter, meaning the elements of our filter will be calculate as:\newline\newline
     \centerline{$F(i) = \frac{G(i)}{\sum_{-N}^{N}G(x)}$ for $i=-N...N$}\newline
 
 \subsubsection{Taking Derivatives with Correlation}
-Averaging, or smoothing, is one of the most important things we can do with a filter. However, another very useful thing is taking a derivative. This allows us to measure how quickly an image is changing. Taking derivatives is something we usually think of doing with a continuous function. Technically, derivatives aren't even defined on a discrete image, because a derivative measures how quickly the image is changing over an interval, in the limit, as the interval becomes infinitely small. However, just as we were able to produce a discrete filter that was an approximation to a continuous Gaussian, we can discretely approximate a continuous derivative operator.\newline
+Averaging, or smoothing, is one of the most important things we can do with a filter. However, another very useful thing is taking a derivative. This allows us to measure how quickly an image is changing. Taking derivatives is something we usually think of doing with a continuous function. Technically, derivatives aren't even defined on a discrete image, because a derivative measures how quickly the image is changing over an interval, in the limit, as the interval becomes infinitely small. However, just as we were able to produce a discrete filter that was an approximation to a continuous Gaussian, we can discretely approximate a continuous derivative operator.
 
-Intuitively, a derivative is found by taking the difference as we go from one part of a function to another. That is, it's the change in $y$ divided by the change in $x$. So it's natural that a derivative filter will look something like: (-1/2 0 1/2). When we apply this filter, we get $J(i) = [I(i+1)-I(i-1)]/2$. This is taking the change in $y$, that is, the image intensity, and dividing it by the change in $x$, the image position.\newline
+Intuitively, a derivative is found by taking the difference as we go from one part of a function to another. That is, it's the change in $y$ divided by the change in $x$. So it's natural that a derivative filter will look something like: (-1/2 0 1/2). When we apply this filter, we get $J(i) = [I(i+1)-I(i-1)]/2$. This is taking the change in $y$, that is, the image intensity, and dividing it by the change in $x$, the image position.
 
-Let's consider an example. Suppose image intensity grows quadratically with position, so that $I(x)=x^2$. Then if we look at the intensities at positions 1,2,3,... they will look like:\newline
-\begin{table}[h]
+Let's consider an example. Suppose image intensity grows quadratically with position, so that $I(x)=x^2$. Then if we look at the intensities at positions 1,2,3,... they will look like:
+
+\begin{table}[ht]
 \centering
 \label{my-label-3}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
@@ -1280,8 +1300,8 @@ Let's consider an example. Suppose image intensity grows quadratically with posi
 \caption{image $I$}
 \end{table}
 
-If we filter this with a filter of the form (-1/2 0 1/2) we will get:\newline
-\begin{table}[h]
+If we filter this with a filter of the form (-1/2 0 1/2) we will get:
+\begin{table}[ht]
 \centering
 \label{my-label-4}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
@@ -1291,14 +1311,15 @@ If we filter this with a filter of the form (-1/2 0 1/2) we will get:\newline
 \caption{image $I$}
 \end{table}
 
-We know that the derivative of $I(x), dI/dx = 2x$. And sure enough, we have, for example, that $J(2)=4, J(3)=6, ...$ Notice that $J(1)$ is not equal to 2 because of the way we handle the boundary, by setting $I(0) = 1$ instead of $I(0) = 0$. So at the boundary, our image doesn't reflect $I(x) = x^2$.\newline
+We know that the derivative of $I(x), dI/dx = 2x$. And sure enough, we have, for example, that $J(2)=4, J(3)=6, ...$ Notice that $J(1)$ is not equal to 2 because of the way we handle the boundary, by setting $I(0) = 1$ instead of $I(0) = 0$. So at the boundary, our image doesn't reflect $I(x) = x^2$.
 
 We could just as easily have used a filter like (0 -1 1), which computes the expression: $J(i) = [I(i+1)-I(i)]/1$, or a filter (-1 1 0), which computes $J(i) = [I(i)-I(i-1)]/1$. These are all reasonable approximations to a derivative. One advantage of the filter (-1/2 0 1/2) is that it treats the neighbors of a pixel symmetrically.
 
 \subsubsection{Matching with Correlation}
-Part of the power of correlation is that we can use it, and related methods, to find locations in an image that are similar to a template. To do this, think of the filter as a template; we are sliding it around the image looking for a location where the template overlaps the images so that values in the template are aligned with similar values in the image.\newline
+Part of the power of correlation is that we can use it, and related methods, to find locations in an image that are similar to a template. To do this, think of the filter as a template; we are sliding it around the image looking for a location where the template overlaps the images so that values in the template are aligned with similar values in the image.
 
-First, we need to decide how to measure the similarity between the template and the region of the image with with which it is aligned. A simple and natural way to do this to measure the sum of the square of the differences between values in the template and in the image. This increases as the difference between the two increases. For the difference between the filter and the portion of the image centered at $x$, we can write this as:\newline\newline
+First, we need to decide how to measure the similarity between the template and the region of the image with with which it is aligned. A simple and natural way to do this to measure the sum of the square of the differences between values in the template and in the image. This increases as the difference between the two increases. For the difference between the filter and the portion of the image centered at $x$, we can write this as:
+
 $\begin{aligned}
     \sum_{i=-N}^{N}[F(i)-I(x+i)]^2 &= \sum_{i=-N}^{N}[F^2(i)+I^2(x+i)-2F(i)I(x+i)] \\
     &= \sum_{i=-N}^{N}[F^2(i)] + \sum_{i=-N}^{N}[I^2(x+i)] + 2\sum_{i=-N}^{N}[F(i)I(x+i)]
@@ -1312,11 +1333,11 @@ As shown, we can break the Euclidean distance into three parts:
     \item And the third part is twice the negative value of the correlation between $F$ and $I$.
 \end{itemize}
 
-We can see that, all things being equal, as the correlation between the filter and the image increases, the Euclidean distance between them decreases. This provides an intuition for using correlation to match a template with an image. Places where the correlation between the two is high tend to be locations where the filter and image match well.\newline\newline
+We can see that, all things being equal, as the correlation between the filter and the image increases, the Euclidean distance between them decreases. This provides an intuition for using correlation to match a template with an image. Places where the correlation between the two is high tend to be locations where the filter and image match well.
 
-This also shows one of the weaknesses of using correlation to compare a template and image. Correlation can also be high in locations where the image intensity is high, even if it doesn't match the template well. Here's an example. Suppose we correlate the filter \newline\newline
+This also shows one of the weaknesses of using correlation to compare a template and image. Correlation can also be high in locations where the image intensity is high, even if it doesn't match the template well. Here's an example. Suppose we correlate the filter
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label-5}
 \begin{tabular}{|l|l|l|}
@@ -1327,7 +1348,7 @@ This also shows one of the weaknesses of using correlation to compare a template
 
 with the image:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label-6}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
@@ -1338,7 +1359,7 @@ with the image:
 
 We get the following the result:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label-7}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
@@ -1347,11 +1368,11 @@ We get the following the result:
 \end{tabular}
 \end{table}
 
-Notice that we get a high result (85) when we center the filter on the \textbf{\textit{sixth}} pixel, because (3,7,5) matches very well with (3,8,4). But, the highest correlation occurs at the thirteenth pixel, where the filter is matched to (7,7,7). Even though this is not as similar to (3,7,5), its magnitude is greater.\newline\newline
+Notice that we get a high result (85) when we center the filter on the \textbf{\textit{sixth}} pixel, because (3,7,5) matches very well with (3,8,4). But, the highest correlation occurs at the thirteenth pixel, where the filter is matched to (7,7,7). Even though this is not as similar to (3,7,5), its magnitude is greater.
 
-One way to overcome this is by just using the sum of square differences between the signals, as given above. This produces the result:\newline
+One way to overcome this is by just using the sum of square differences between the signals, as given above. This produces the result:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label-8}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
@@ -1360,14 +1381,15 @@ One way to overcome this is by just using the sum of square differences between 
 \end{tabular}
 \end{table}
 
-We can see that using Euclidean distance, (3,7,5) best matches the part of the image with pixel values (3,8,4). The next best match has values (0,7,7), but this is significantly worse.\newline\newline
+We can see that using Euclidean distance, (3,7,5) best matches the part of the image with pixel values (3,8,4). The next best match has values (0,7,7), but this is significantly worse.
 
-Another option is to perform \textbf{\textit{normalized correlation}} by computing:\newline\newline
-    \centerline{$\frac{\sum_{i=-N}^N [F(i)I(x+i)]}{\sqrt{\sum_{i=-N}^N [I(x+i)]^2} \sqrt{\sum_{i=-N}^N [F(i)]^2}}$}
+Another option is to perform \textbf{\textit{normalized correlation}} by computing:\newline
+
+\centerline{$\frac{\sum_{i=-N}^N [F(i)I(x+i)]}{\sqrt{\sum_{i=-N}^N [I(x+i)]^2} \sqrt{\sum_{i=-N}^N [F(i)]^2}}$}
 
 This measure of similarity is similar to correlation, but it is invariant to scaling the template or a corresponding region in the image. If we scale $I(x-N)...I(x+N)$, by a single, constant factor, this will scale the numerator and denominator by the same amount. Consequently, for example, (3,7,5) will have the same normalized correlation with (7,7,7) that it would have with (1,1,1). When we perform normalized correlation between (3,7,5) and the above image we get:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \label{my-label-9}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
@@ -1385,11 +1407,11 @@ Convolution leverages three important ideas that can help improve a machine lear
     \item \textbf{parameter sharing}
     \item \textbf{equivariant representations}
 \end{itemize}
-Moreover, convolution provides a means for working wit inputs of variable size.\newline\newline
+Moreover, convolution provides a means for working with inputs of variable size.
 
-\noindent \textbf{Traditional neural network layers} use matrix multiplication by a matrix of parameters with a separate parameter describing the interaction between each input unit and each output unit. This means that every output unit interacts with every input unit.\newline
+\noindent \textbf{Traditional neural network layers} use matrix multiplication by a matrix of parameters with a separate parameter describing the interaction between each input unit and each output unit. This means that every output unit interacts with every input unit.
 
-\noindent \textbf{Convolutional networks}, however, typically have \textbf{sparse interactions}. This is accomplished by making the kernel smaller that the input. For example, when processing an image, meaningful features such as edges with kernels that occupy only tens or hundreds of pixels. This means that we need to store fewer parameters, which both reduces the memory requirements of the model and improves its statistical efficiency.It also means that computing the output requires fewer operations.\newline
+\noindent \textbf{Convolutional networks}, however, typically have \textbf{sparse interactions}. This is accomplished by making the kernel smaller that the input. For example, when processing an image, meaningful features such as edges with kernels that occupy only tens or hundreds of pixels. This means that we need to store fewer parameters, which both reduces the memory requirements of the model and improves its statistical efficiency.It also means that computing the output requires fewer operations.
 
 \noindent These improvements in efficiency are usually quite large. If there are $m$ inputs and
 $n$ outputs, then 
@@ -1419,7 +1441,7 @@ In a deeper convolutional network, units in the deeper layers may \textit{indire
   \caption{The receptive field of the units in the deeper layers of a convolutional network is larger than the receptive field of the units in the shallow layers. This effect increases if the network includes architectural features like \textit{strided} convolution or \textit{pooling}. This means that even though \textbf{\textit{direct}} connections in a convolutional net are very sparse, units in the deeper layers can be \textbf{\textit{indirectly}} connected to all or most of the input image.}
 \end{figure}
 
-\noindent \textbf{Parameter sharing} refers to using the same parameter for more than one function in a model. In a \textbf{traditional neural net}, each element of the weight matrix is used exactly once when computing the output of a layer. It is multiplied by one element of the input and then never revisited. As a synonym for parameter sharing, one can say that a network has \textbf{tied weights}, because the value of the weight applied to one input is tied to the value of a weight applied elsewhere. In a \textbf{convolutional neural net}, each member of the kernel is used at every position of the input (except perhaps some of the boundary pixels, depending on the design decisions regarding the boundary). Te parameter sharing used by the convolution operation means that rather than learning a separate set of parameters for every location, we learn only one set. \newline
+\noindent \textbf{Parameter sharing} refers to using the same parameter for more than one function in a model. In a \textbf{traditional neural net}, each element of the weight matrix is used exactly once when computing the output of a layer. It is multiplied by one element of the input and then never revisited. As a synonym for parameter sharing, one can say that a network has \textbf{tied weights}, because the value of the weight applied to one input is tied to the value of a weight applied elsewhere. In a \textbf{convolutional neural net}, each member of the kernel is used at every position of the input (except perhaps some of the boundary pixels, depending on the design decisions regarding the boundary). Te parameter sharing used by the convolution operation means that rather than learning a separate set of parameters for every location, we learn only one set.
 
 \noindent This does not affect the runtime of forward propagation - it is still $O(k \times n)$ - but it does further reduce the storage requirements of the model to $k$ parameters. Recall than $k$ is usually several orders of magnitude smaller than $m$. Since $m$ and $n$ are usually roughly the same size, $k$ is practically insignificant compared to $m \times n$. Convolution is thus dramatically more efficient than dense matrix multiplication in terms of the memory requirements and statistical efficiency. For a graphical depiction of how parameter sharing works, check out the following figure:
 
