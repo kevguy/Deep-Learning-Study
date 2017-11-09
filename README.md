@@ -27,41 +27,71 @@ Add Overleaf:
 git remote add overleaf https://git.overleaf.com/11098063wbshnmgsqxst
 ```
 
-## How to pull updates and commit your changes:
-```
-git pull overleaf master
-git pull github master
-```
-
-```
-git add -A :/
-git commit -am "Your commit message"
-```
-
-Push to Github:
-
-```
-git push github master
-```
-
-Push to Overleaf:
-
-```
-git push overleaf master
-```
-
-## How to commit your changes the lazy way:
-Setup:
+(Optional: for lazy asses like [kevguy](https://github.com/kevguy))
 ```
 git remote add both https://git.overleaf.com/11098063wbshnmgsqxst
 git remote set-url --add --push both https://git.overleaf.com/11098063wbshnmgsqxst
 git remote set-url --add --push both https://github.com/kevguy/Deep-Learning-Study.git
 ```
 
-Commit and push the changes:
+## How to pull updates and commit your changes:
+### For changes made on Overleaf
+Let's say you've made some changes on Overleaf, then locally:
 ```
-git commit -am "Your commit message"
+git pull
+
+# OR
+git pull overleaf master
+git pull github master
+```
+
+If you did the lazy setup, run this and you are done:
+```
 git push both
+```
+
+Otherwise, push to Github:
+
+```
+git push github master
+```
+
+Then push to Overleaf:
+
+```
+git push overleaf master
+```
+
+### For changes made locally
+```
+git pull
+
+# OR
+git pull overleaf master
+git pull github master
+```
+
+Then commit your code:
+```
+git add -A :/
+git commit -am "Your commit message"
+```
+
+If you did the lazy setup, run this and you are done:
+```
+git push both
+```
+
+Otherwise, push to Github:
+
+```
+git push github master
+```
+
+Then push to Overleaf:
+
+```
+git push overleaf master
 ```
 
 ## Reference
