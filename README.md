@@ -2,7 +2,7 @@
 Study notes
 
 ## How Bow Dah Study Group:
- - Kev Lai (kevlai22@uw.edu, kevguy)
+ - Kev Lai (Email: kevlai22@uw.edu, Github: [kevguy](https://github.com/kevguy))
  - Christopher Chiu
  - Anakin Yuen
  - Sam Wong
