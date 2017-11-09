@@ -942,7 +942,7 @@ So to maximize the margin, we have to minimize $\Vert w \Vert$. Hence the optimi
 \framebox{Find $w$ and $\alpha$ that minimizes $\Vert w \Vert^2$ \newline
 subject to $y_i(X_i \cdot w + \alpha) \geq 1 \quad$ for all $i \in [1,n]$}
 
-\chapter{Probability and Information Theory}
+\chapter{DLB - Chapter 3: Probability and Information Theory}
 
 \section{Marginal Probability}
 Sometimes we know the probability distribution over a set of variables and we want t know the probability distribution over just a subset of them. And the probability distribution over the subset is known as the \textit{marginal probability distribution}.\newline
@@ -963,6 +963,14 @@ The probability of some event, given that some other event has happened, is call
 Any joint probability distribution over many random variables may be decomposed into conditional distributions over only one variable:\newline
     \centerline{$P(X_1,...,X_n) = P(X_1)\prod_{i=2}^{n} P(X_i|X_1,...,X_{i-1})$}\newline
 
+$\begin{aligned}
+    P(X_1,...,X_n) &= P(X_n | X_1, ..., X_{n-1}) P(X_1, ..., X_{n-1}) \\
+    &= P(X_n | X_1, ..., X_{n-1}) P(X_{n-1} | X_1, ..., X_{n-2}) P(X_1, ..., X_{n-2}) \\
+    &= P(X_n | X_1, ..., X_{n-1}) P(X_{n-1} | X_1, ..., X_{n-2}) P(X_{n-2} | X_1, ..., X_{n-3}) P(X_1, ..., X_{n-3}) \\
+    &= ... \\
+    &= P(X_1)\prod_{i=2}^{n} P(X_i|X_1,...,X_{i-1})
+\end{aligned}$
+
 For example,\newline
 \begin{itemize}
     \item $P(a,b,c) = P(a|b,c)P(b,c)$
@@ -970,6 +978,30 @@ For example,\newline
     \item $P(a,b,c) = P(a|b,c)P(b|c)P(c)$
 \end{itemize}
 
+\section{Independence and Conditional Independence}
+Two random variables are \textbf{\textit{independent}} if their probability distribution can be expressed as a product of two factors, one involving only $X$ and one involving only $Y$:\newline\newline
+\centerline{$\forall x \in X, y \in Y, p(X=x, Y=y) = p(X=x)p(Y=y)$}\newline\newline
+Two random variables $X$ and $Y$ are conditionally independent given a random variable $Z$ if the conditional probability distribution over $X$ and $Y$ factorizes in this way for every value of $Z$:\newline\newline
+\centerline{$\forall X \in x, Y \in y, z \in Z, p(X=x, Y=y | Z = z) = p(X=x | Z=z)p(Y=y | Z=z)$}\newline\newline
+We can denote independence and conditional independence with compact notation: $X \perp Y$, means that $X$ and $Y$ are independent, while $X \perp Y | Z$ means that $X$ and $Y$ are conditionally independent given $Z$.\newline
+
+\section{Expectation, Variance and Covariance}
+The \textbf{\textit{expectation}} or \textbf{\textit{expected value}} of some function $f(x)$ with respect to a probability distribution $P(x)$ is the average or mean value that $f$ takes on when $x$ is drawn from P. Simply speaking, it means we are finding out if we're choosing different $x$ from $P$, then calculate $f(x)$, what's the average of $f(x)$.\newline
+
+\noindent For discrete variables this can be computed with a summation:\newline\newline
+\centerline{$\mathbb{E}_{X~P}[f(x)] = \sum_x P(x)f(x)$}\newline
+
+\noindent while for continuous variables, it is computed with an integral:\newline\newline
+\centerline{$\mathbb{E}_{X~P}[f(x)] = \int p(x)f(x)dx$}\newline
+
+\noindent We can also simply write the name of the random variable that the expectation is over, as in $\mathbb{E}_X[f(x)]$. We may also omit the subscript entirely, as in $\mathbb{E}[f(x)]$.\newline
+
+\noindent Expectations are linear, for example,\newline\newline
+\centerline{$\mathbb{E}_X[\alpha f(x) + \beta g(x)] = \alpha \mathbb{E}_X[f(x)] + \beta \mathbb{E}_X[g(x)]$}\newline
+when $\alpha$ and $\beta$ are not independent on $x$.\newline
+
+\noindent The \textbf{\textit{variance}} gives a measure of how much the values of a function of a random variable $X$ vary as we sample different values of $x$ from its probability distribution:\newline\newline
+\centerline{$\text{Var}(f(x)) = \mathbb{E}[(f(x) - \mathbb{E}[f(x)])^2]$}
 
 
 \chapter{Machine Learning Basics}
